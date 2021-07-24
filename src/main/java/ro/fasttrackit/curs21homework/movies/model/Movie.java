@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Movies {
+public class Movie {
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -20,10 +20,10 @@ public class Movies {
 	@ManyToMany
 	private List<Actor> actors;
 
-	Movies() {
+	Movie() {
 	}
 
-	public Movies(String name, int year, MovieRating movieRating, List<Review> reviews, Studio studio, List<Actor> actors) {
+	public Movie(String name, int year, MovieRating movieRating, List<Review> reviews, Studio studio, List<Actor> actors) {
 		this.name = name;
 		this.year = year;
 		this.movieRating = movieRating;

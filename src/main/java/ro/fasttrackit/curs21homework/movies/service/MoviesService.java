@@ -1,6 +1,6 @@
 package ro.fasttrackit.curs21homework.movies.service;
 
-import ro.fasttrackit.curs21homework.movies.model.Movies;
+import ro.fasttrackit.curs21homework.movies.model.Movie;
 import ro.fasttrackit.curs21homework.movies.repository.MoviesRepository;
 
 import java.util.List;
@@ -12,7 +12,7 @@ public class MoviesService {
 		this.repository = repository;
 	}
 
-	public List<Movies> getAll() {
+	public List<Movie> getAll() {
 		return repository.findAll();
 	}
 }

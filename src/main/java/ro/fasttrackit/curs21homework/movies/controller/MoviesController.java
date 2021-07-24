@@ -3,7 +3,7 @@ package ro.fasttrackit.curs21homework.movies.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ro.fasttrackit.curs21homework.movies.model.Movies;
+import ro.fasttrackit.curs21homework.movies.model.Movie;
 import ro.fasttrackit.curs21homework.movies.service.MoviesService;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class MoviesController {
 	}
 
 	@GetMapping
-	List<Movies> getAll(){
+	List<Movie> getAll(){
 		return moviesService.getAll();
 	}
 }

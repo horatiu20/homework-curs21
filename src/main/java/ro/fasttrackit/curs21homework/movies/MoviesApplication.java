@@ -34,10 +34,10 @@ public class MoviesApplication {
 			Studio cinesite = studioRepository.save(new Studio("Cinesite", "USA"));
 
 			repository.saveAll(List.of(
-					new Movies("The Matrix", 1999, new MovieRating(9, "Village Roadshow Pictures"), listOfReviews1(), warnerBrosStudio, listOfActors1()),
-					new Movies("Dune", 2021, new MovieRating(10, "HBO Max"), listOfReviews2(), legendaryEntertainment, listOfActors2()),
-					new Movies("Foundation", 2021, new MovieRating(8, "Apple Movies"), listOfReviews3(), skydanceTelevision, listOfActors3()),
-					new Movies("The Witcher", 2019, new MovieRating(9, "Netflix"), listOfReviews4(), cinesite, listOfActors4())));
+					new Movie("The Matrix", 1999, new MovieRating(9, "Village Roadshow Pictures"), listOfReviews1(), warnerBrosStudio, listOfActors1()),
+					new Movie("Dune", 2021, new MovieRating(10, "HBO Max"), listOfReviews2(), legendaryEntertainment, listOfActors2()),
+					new Movie("Foundation", 2021, new MovieRating(8, "Apple Movies"), listOfReviews3(), skydanceTelevision, listOfActors3()),
+					new Movie("The Witcher", 2019, new MovieRating(9, "Netflix"), listOfReviews4(), cinesite, listOfActors4())));
 		};
 	}
 
