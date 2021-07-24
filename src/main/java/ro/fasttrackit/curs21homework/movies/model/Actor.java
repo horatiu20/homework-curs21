@@ -13,7 +13,6 @@ public class Actor {
 	private int birthYear;
 
 	Actor() {
-
 	}
 
 	public Actor(String name, int birthYear) {

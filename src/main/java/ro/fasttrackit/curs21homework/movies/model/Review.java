@@ -13,7 +13,6 @@ public class Review {
 	private String reviewer;
 
 	Review() {
-
 	}
 
 	public Review(String text, String reviewer) {
