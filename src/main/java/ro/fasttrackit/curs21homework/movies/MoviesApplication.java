@@ -5,7 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import ro.fasttrackit.curs21homework.movies.model.*;
-import ro.fasttrackit.curs21homework.movies.repository.*;
+import ro.fasttrackit.curs21homework.movies.repository.ActorRepository;
+import ro.fasttrackit.curs21homework.movies.repository.MovieRepository;
+import ro.fasttrackit.curs21homework.movies.repository.StudioRepository;
 
 import java.util.List;
 

@@ -3,6 +3,8 @@ package ro.fasttrackit.curs21homework.movies.model;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.CascadeType.ALL;
+
 @Entity
 public class Movie {
 	@Id
@@ -11,9 +13,9 @@ public class Movie {
 	private String name;
 	private int year;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = ALL)
 	private MovieRating movieRating;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = ALL)
 	private List<Review> reviews;
 	@ManyToOne
 	private Studio studio;
