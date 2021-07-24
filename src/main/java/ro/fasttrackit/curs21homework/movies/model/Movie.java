@@ -3,7 +3,7 @@ package ro.fasttrackit.curs21homework.movies.model;
 import javax.persistence.*;
 import java.util.List;
 
-import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.CascadeType.*;
 
 @Entity
 public class Movie {

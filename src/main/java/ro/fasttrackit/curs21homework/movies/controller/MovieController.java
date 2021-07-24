@@ -18,7 +18,7 @@ public class MovieController {
 	}
 
 	@GetMapping
-	List<Movie> getAll() {
+	List<Movie> getAll(){
 		return movieService.getAll();
 	}
 }
