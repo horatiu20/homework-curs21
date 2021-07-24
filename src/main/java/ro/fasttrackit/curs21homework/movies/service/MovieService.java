@@ -1,14 +1,14 @@
 package ro.fasttrackit.curs21homework.movies.service;
 
 import ro.fasttrackit.curs21homework.movies.model.Movie;
-import ro.fasttrackit.curs21homework.movies.repository.MoviesRepository;
+import ro.fasttrackit.curs21homework.movies.repository.MovieRepository;
 
 import java.util.List;
 
-public class MoviesService {
-	private final MoviesRepository repository;
+public class MovieService {
+	private final MovieRepository repository;
 
-	public MoviesService(MoviesRepository repository) {
+	public MovieService(MovieRepository repository) {
 		this.repository = repository;
 	}
 

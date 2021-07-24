@@ -26,7 +26,7 @@ public class MoviesApplication {
 	}
 
 	@Bean
-	CommandLineRunner atStartup(MoviesRepository repository, ActorRepository actorRepository, MovieRatingRepository movieRatingRepository, ReviewRepository reviewRepository, StudioRepository studioRepository) {
+	CommandLineRunner atStartup(MovieRepository repository, ActorRepository actorRepository, MovieRatingRepository movieRatingRepository, ReviewRepository reviewRepository, StudioRepository studioRepository) {
 		return args -> {
 			Studio warnerBrosStudio = studioRepository.save(new Studio("Warner Bros", "USA"));
 			Studio legendaryEntertainment = studioRepository.save(new Studio("Legendary Entertainment", "USA"));

@@ -4,21 +4,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ro.fasttrackit.curs21homework.movies.model.Movie;
-import ro.fasttrackit.curs21homework.movies.service.MoviesService;
+import ro.fasttrackit.curs21homework.movies.service.MovieService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("movies")
-public class MoviesController {
-	public final MoviesService moviesService;
+public class MovieController {
+	public final MovieService movieService;
 
-	public MoviesController(MoviesService moviesService) {
-		this.moviesService = moviesService;
+	public MovieController(MovieService movieService) {
+		this.movieService = movieService;
 	}
 
 	@GetMapping
 	List<Movie> getAll(){
-		return moviesService.getAll();
+		return movieService.getAll();
 	}
 }
