@@ -17,7 +17,7 @@ public class Movie {
 	private List<Review> reviews;
 	@ManyToOne
 	private Studio studio;
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	private List<Actor> actors;
 
 	Movie() {

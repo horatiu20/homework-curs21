@@ -5,7 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import ro.fasttrackit.curs21homework.movies.model.*;
-import ro.fasttrackit.curs21homework.movies.repository.*;
+import ro.fasttrackit.curs21homework.movies.repository.ActorRepository;
+import ro.fasttrackit.curs21homework.movies.repository.MovieRepository;
+import ro.fasttrackit.curs21homework.movies.repository.StudioRepository;
 
 import java.util.List;
 
@@ -26,47 +28,31 @@ public class MoviesApplication {
 	}
 
 	@Bean
-	CommandLineRunner atStartup(MovieRepository repository, StudioRepository studioRepository) {
+	CommandLineRunner atStartup(MovieRepository repository, StudioRepository studioRepository, ActorRepository actorRepository) {
 		return args -> {
+			Actor actor1 = actorRepository.save(new Actor("Keanu Reeves", 1964));
+			Actor actor2 = actorRepository.save(new Actor("Laurence Fishburne", 1961));
+			Actor actor3 = actorRepository.save(new Actor("Carrie-Anne Moss", 1967));
+			Actor actor4 = actorRepository.save(new Actor("Timothee Chalamet", 1995));
+			Actor actor5 = actorRepository.save(new Actor("Rebecca Ferguson", 1983));
+			Actor actor6 = actorRepository.save(new Actor("Oscar Isaac", 1979));
+			Actor actor7 = actorRepository.save(new Actor("Jared Harris", 1961));
+			Actor actor8 = actorRepository.save(new Actor("Lee Pace", 1979));
+			Actor actor9 = actorRepository.save(new Actor("Laura Birn", 1981));
+			Actor actor10 = actorRepository.save(new Actor("Henry Cavill", 1983));
+			Actor actor11 = actorRepository.save(new Actor("Freya Allan", 2001));
+			Actor actor12 = actorRepository.save(new Actor("Anya Chalotra", 1996));
 			Studio warnerBrosStudio = studioRepository.save(new Studio("Warner Bros", "USA"));
 			Studio legendaryEntertainment = studioRepository.save(new Studio("Legendary Entertainment", "USA"));
 			Studio skydanceTelevision = studioRepository.save(new Studio("Skydance Television", "USA"));
 			Studio cinesite = studioRepository.save(new Studio("Cinesite", "USA"));
 
 			repository.saveAll(List.of(
-					new Movie("The Matrix", 1999, new MovieRating(9, "Village Roadshow Pictures"), listOfReviews1(), warnerBrosStudio, listOfActors1()),
-					new Movie("Dune", 2021, new MovieRating(10, "HBO Max"), listOfReviews2(), legendaryEntertainment, listOfActors2()),
-					new Movie("Foundation", 2021, new MovieRating(8, "Apple Movies"), listOfReviews3(), skydanceTelevision, listOfActors3()),
-					new Movie("The Witcher", 2019, new MovieRating(9, "Netflix"), listOfReviews4(), cinesite, listOfActors4())));
+					new Movie("The Matrix", 1999, new MovieRating(9, "Village Roadshow Pictures"), listOfReviews1(), warnerBrosStudio, List.of(actor1, actor2, actor3)),
+					new Movie("Dune", 2021, new MovieRating(10, "HBO Max"), listOfReviews2(), legendaryEntertainment, List.of(actor4, actor5, actor6)),
+					new Movie("Foundation", 2021, new MovieRating(8, "Apple Movies"), listOfReviews3(), skydanceTelevision, List.of(actor7, actor8, actor9)),
+					new Movie("The Witcher", 2019, new MovieRating(9, "Netflix"), listOfReviews4(), cinesite, List.of(actor10, actor11, actor12))));
 		};
-	}
-
-	private List<Actor> listOfActors1() {
-		return List.of(
-				new Actor("Keanu Reeves", 1964),
-				new Actor("Laurence Fishburne", 1961),
-				new Actor("Carrie-Anne Moss", 1967));
-	}
-
-	private List<Actor> listOfActors2() {
-		return List.of(
-				new Actor("Timothee Chalamet", 1995),
-				new Actor("Rebecca Ferguson", 1983),
-				new Actor("Oscar Isaac", 1979));
-	}
-
-	private List<Actor> listOfActors3() {
-		return List.of(
-				new Actor("Jared Harris", 1961),
-				new Actor("Lee Pace", 1979),
-				new Actor("Laura Birn", 1981));
-	}
-
-	private List<Actor> listOfActors4() {
-		return List.of(
-				new Actor("Henry Cavill", 1983),
-				new Actor("Freya Allan", 2001),
-				new Actor("Anya Chalotra", 1996));
 	}
 
 	private List<Review> listOfReviews1() {
