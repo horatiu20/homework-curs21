@@ -42,6 +42,7 @@ public class MoviesApplication {
 			Actor actor10 = actorRepository.save(new Actor("Henry Cavill", 1983));
 			Actor actor11 = actorRepository.save(new Actor("Freya Allan", 2001));
 			Actor actor12 = actorRepository.save(new Actor("Anya Chalotra", 1996));
+
 			Studio warnerBrosStudio = studioRepository.save(new Studio("Warner Bros", "USA"));
 			Studio legendaryEntertainment = studioRepository.save(new Studio("Legendary Entertainment", "USA"));
 			Studio skydanceTelevision = studioRepository.save(new Studio("Skydance Television", "USA"));
